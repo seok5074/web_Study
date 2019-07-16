@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+ul#main_menu{
+	list-style: none;
+}
+
+ul#main_menu  li{
+	/* 수평배치 */
+	display: inline-block;
+	margin-top: 15px;
+	margin-left: 50px;
+}
+
+ul#main_menu  li a{
+	text-decoration: none; /* 밑줄제거 */
+	text-align: center;
+	display: inline-block;
+	width: 150px;
+	font-family: 휴먼옛체,궁서체,굴림체;
+	font-size: 20pt;
+	font-weight: bold;
+	color: #3333ff;
+	/* background-color: red; */
+}
+
+ul#main_menu  li a:hover{
+	color: red;
+}

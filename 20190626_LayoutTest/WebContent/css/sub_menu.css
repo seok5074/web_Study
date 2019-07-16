@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+ul.submenu_style{
+	list-style: none;
+}
+
+ul.submenu_style  li{
+	margin-top: 50px;
+}
+
+ul.submenu_style  li a{
+	text-decoration: none;
+	font-family: 휴먼옛체,궁서체;
+	font-size: 15pt;
+	color: #8888ff;
+}
+
+ul.submenu_style  li a:hover{
+	color: red;
+}

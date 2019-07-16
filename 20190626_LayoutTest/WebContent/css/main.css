@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+* { margin: 0; }
+
+div#main_box{
+	width: 800px;	
+	height: 600px;
+	margin: auto; /* 중앙정렬 */
+	/* background-color: #cccccc; */
+}
+
+div#header{
+	height: 100px;
+	/* background-color: #ffcccc; */
+}
+
+div#aside{
+	width: 30%;
+	height: 400px;
+	float: left;
+	background-color: #ffffcc;
+}
+
+div#content{
+	width: 70%;
+	min-height: 400px; /* 기본크기 */
+	height: auto; /* 자동늘리기 */
+	float: left;
+	
+	background-color: #ccffcc;
+}
+
+div#footer{
+	height: 100px;
+	/* float속성 해제 */
+	clear: both;
+	
+	background-color: #ccccff;
+}
+
+h1#title{
+	text-align: center;
+	font-size: 24pt;
+	margin-top: 10px;
+	
+	color: #0080c0;
+	
+	text-shadow: 1px 1px 1px black;
+}
+
+
+
+
+
+
