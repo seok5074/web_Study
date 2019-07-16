@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+#disp {
+	width: 400px;
+	height: 400px;
+	border: 2px solid green;
+	box-shadow: 1px 1px 1px black;
+}
+</style>
+
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#bt1").click(function() {
+		$("#disp").html("1  동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세	무궁화 삼천리 화려 강산 대한 사람 대한으로 길이 보전하세");
+		$("#disp").css("background","black");	
+		$("#disp").css("color","white");		
+		$("#disp").css("font-size","20pt");	
+		$("#disp").css("font-family","궁서");
+	});
+	$("#bt2").click(function() {
+		$("#disp").html("2. 남산 위에 저 소나무 철갑을 두른 듯 	바람 서리 불변함은 우리 기상일세 무궁화 삼천리 화려 강산	대한 사람 대한으로 길이 보전하세");
+		$("#disp").css("background","black");	
+		$("#disp").css("color","yellow");		
+		$("#disp").css("font-size","20pt");	
+		$("#disp").css("font-family","궁서");
+	});
+	$("#bt3").click(function() {
+		$("#disp").html("3. 가을 하늘 공활한데 높고 구름 없이 	밝은 달은 우리 가슴 일편단심일세	무궁화 삼천리 화려 강산 대한 사람 대한으로 길이 보전하세");
+		$("#disp").css("background","gray");	
+		$("#disp").css("color","blue");		
+		$("#disp").css("font-size","20pt");	
+		$("#disp").css("font-family","궁서");
+	});
+	$("#bt4").click(function() {
+		$("#disp").html("4. 이 기상과 이 맘으로 충성을 다하여	괴로우나 즐거우나 나라 사랑하세	무궁화 삼천리 화려 강산 대한 사람 대한으로 길이 보전하세");
+		$("#disp").css("background","gray");	
+		$("#disp").css("color","red");		
+		$("#disp").css("font-size","20pt");	
+		$("#disp").css("font-family","궁서");
+	});
+	$("#reset").click(function() {
+		alert("리셋하시겠습니까");
+		$("#disp").html("");
+		$("#disp").css("background","white");
+
+	});
+});
+</script>
+</head>
+<body>
+	<!-- 배경 :검정 글자색: 흰색 -->
+	<input type="button" value="애국가1" id="bt1">
+	<!-- 배경 :검정 글자색: 노랑 -->
+	<input type="button" value="애국가2" id="bt2">
+	<!-- 배경 :회색 글자색:  파랑-->
+	<input type="button" value="애국가3" id="bt3">
+	<!-- 배경 :회색 글자색: 빨강 -->
+	<input type="button" value="애국가4" id="bt4">
+	<input type="button" value="reset" id="reset">
+	<hr>
+	<div id="disp"></div>
+</body>
+</html>

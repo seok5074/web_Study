@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- jQuery사용하려면... -->
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+  window.onload = function(){
+	  console.log('--Javascript를 이용한 초기화 이벤트--');
+  };
+  
+  //jQuery를 이용한 초기화 방법
+  // jQuery(selector).이벤트(속성)...
+  // jQuery -> $로 바꿔서 사용해도 된다
+  // $(selector).이벤트(처리함수(){});
+  $(document).ready(function(){
+	  console.log('--jQuery를 이용한 초기화--');
+	  //버튼이벤트 등록
+	  jQuery('#bt1').click(function(){
+		  alert('버튼1 클릭');
+	  });
+	  
+  });
+
+  
+  
+</script>
+
+
+</head>
+<body>
+ <input type="button"  id="bt1" value="버튼1">
+ 
+</body>
+</html>

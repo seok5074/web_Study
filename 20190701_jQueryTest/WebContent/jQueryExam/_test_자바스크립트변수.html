@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function test() {
+		var local_var=10; //function 안에서 var 을 붙이면 지역변수
+			global_val=100;//안붙인상황은 전역변수이다.   <= 이렇게쓸가능성은 거의없다.
+	}
+
+test();//함수를 호출해야 내부전역변수가 할당이된다.
+
+document.write("전역변수: "+global_val);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

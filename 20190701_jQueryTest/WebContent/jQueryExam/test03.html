@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	
+<script type="text/javascript">
+	// 1~6자리 숫자 정규식
+	var number_regular = /^[0-9]{1,6}$/;
+
+	$(document).ready(function() {
+		$("#plus").click(function() {
+			var n1 = $("#num1").val(); //document.getElenmentById('num1').value 값을얻어온다
+			var n2 = $("#num2").val();
+			//정규식 체크
+			if (number_regular.test(n1) == false) {
+				alert('다시입력');
+				$('#num1').val('');//이전값지우기
+				$('#num1').focus();
+				return;
+			}
+			if (number_regular.test(n2) == false) {
+				alert('다시입력');
+				$('#num2').val('');//이전값지우기
+				return;
+			}
+			// 문자 => 숫자 변환
+			var num1 = Number(n1);//parseInt(n1);
+			var num2 = Number(n2);//parseInt(n2);
+			var result = num1 + num2;
+			$("#result").val(result);//document.getElenmentById('result').value=result result에 값을준다.
+		});
+		$("#minus").click(function() {
+			var n1 = $("#num1").val(); //document.getElenmentById('num1').value 값을얻어온다
+			var n2 = $("#num2").val();
+			// 문자 => 숫자 변환
+			if (number_regular.test(n1) == false) {
+				alert('다시입력');
+				$('#num1').val('');//이전값지우기
+				$('#num1').focus();
+				return;
+			}
+			if (number_regular.test(n2) == false) {
+				alert('다시입력');
+				$('#num2').val('');//이전값지우기
+				return;
+			}
+			var num1 = Number(n1);//parseInt(n1);
+			var num2 = Number(n2);//parseInt(n2);
+			var result = num1 - num2;
+
+			$("#result").val(result);//document.getElenmentById('result').value=result result에 값을준다.
+		});
+		$("#multiply").click(function() {
+			var n1 = $("#num1").val(); //document.getElenmentById('num1').value 값을얻어온다
+			var n2 = $("#num2").val();
+			// 문자 => 숫자 변환
+			if (number_regular.test(n1) == false) {
+				alert('다시입력');
+				$('#num1').val('');//이전값지우기
+				$('#num1').focus();
+				return;
+			}
+			if (number_regular.test(n2) == false) {
+				alert('다시입력');
+				$('#num2').val('');//이전값지우기
+				return;
+			}
+			var num1 = Number(n1);//parseInt(n1);
+			var num2 = Number(n2);//parseInt(n2);
+			var result = num1 * num2;
+
+			$("#result").val(result);//document.getElenmentById('result').value=result result에 값을준다.
+		});
+		$("#divide").click(function() {
+			var n1 = $("#num1").val(); //document.getElenmentById('num1').value 값을얻어온다
+			var n2 = $("#num2").val();
+			// 문자 => 숫자 변환
+			if (number_regular.test(n1) == false) {
+				alert('다시입력');
+				$('#num1').val('');//이전값지우기
+				$('#num1').focus();
+				return;
+			}
+			if (number_regular.test(n2) == false) {
+				alert('다시입력');
+				$('#num2').val('');//이전값지우기
+				return;
+			}
+			var num1 = Number(n1);//parseInt(n1);
+			var num2 = Number(n2);//parseInt(n2);
+			var result = (num2==0) ? 0 : num1 / num2;
+
+			$("#result").val(Math.floor(result));//document.getElenmentById('result').value=result result에 값을준다.
+		});
+	});
+</script>
+</head>
+<body>
+	<p>입력되는 숫자는(1~6)까지만 입력</p>
+	<input type="text" id="num1" size="5" /> +
+	<input type="text" id="num2" size="5" /> =
+	<input type="text" id="result" size="7" />
+	<br>
+	<input type="button" id="plus" value="가(+)" />
+	<input type="button" id="minus" value="감(-)" />
+	<input type="button" id="multiply" value="승(*)" />
+	<input type="button" id="divide" value="제(/)" />
+
+</body>
+</html>
+
+<!-- /* $(document).ready(function(){
+			//동적으로 Event처리 
+			$("#plus").bind('click',function(){
+				alert('ddd');
+				$(this).unbind('click');//이벤트 제거
+			});
+	}); */ -->

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//초기화이벤트
+	window.onload = function() {
+		document.getElementById("msg").value = "초기화완료!!";
+	};
+	//함수종류
+	/*
+		1.선언적방식
+			function myfunc(){}
+		2.리터럴방식
+			var myfunc=function(){}
+		3.익명함수
+			function(){}
+	*/
+	var key_func=function(event){
+		var key=event.keyCode;
+		console.log('눌린키:'+key);
+	}
+	window.onkeydown=key_func;
+	
+	window.onkeyup=function(event){
+		var key=event.keyCode;
+		console.log('UP 키:'+key);
+
+	}
+	
+	
+</script>
+</head>
+<body>
+	<input id="msg">
+</body>
+</html>
