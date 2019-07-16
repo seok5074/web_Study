@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function send(f){
+		
+		var jumin_no = f.jumin_no.value.trim();
+		// 주민번호 Pattern체크
+	
+		f.method='POST';
+		f.action='jumin.do';// JuminInfoAction
+		f.submit();
+	}
+
+</script>
+
+</head>
+<body>
+
+<form>
+  주민번호(xxxxxx-xxxxxx):<input name="jumin_no"><br>
+  <input type="button" value="부가정보 알려줘" onclick="send(this.form);">
+</form>
+
+
+</body>
+</html>
