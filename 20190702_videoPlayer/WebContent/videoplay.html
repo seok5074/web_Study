@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+<script type="text/javascript">
+
+	function play_music(){
+	 	//재생시킬 video정보파일
+		var src= document.getElementById("music_video").value;
+		//재생시킬 video정보 얻기
+		var my_video =document.getElementById("my_video");
+		my_video.src=src;//재생파일 셋팅
+		
+		my_videp.play(); 
+	}
+
+</script>
+</head>
+<body>
+곡선택:<select id="music_video">
+		<option value="">:::재생할 곡을 선택하세요:::</option>
+		<option value="mp4/누구없소_LEEHI.mp4">(이하이) 누구없소</option>
+		<option value="mp4/레식.mp4">(약) 레식</option>
+		<option value="mp4/마마무.mp4">(마마무) 불나방</option>
+	</select>
+<hr>
+	<video id="my_video" src="mp4/누구없소_LEEHI.mp4" controls="controls"	width="500" height="300"></video>
+
+</body>
+</html>
