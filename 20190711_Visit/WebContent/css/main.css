@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+*{ 	margin : 0;  }
+
+#main_box{
+	width: 700px;
+	margin : auto;
+}
+
+#title{
+	text-align: center;
+	margin: 20px;
+}
+hr{
+	margin-top:10px;
+	margin-bottom:30px;
+}
+.visit_type{
+	margin: 5px;
+	border: 1px solid red;
+	box-shadow:2px 2px 2px black;
+	margin-bottom: 20px;
+}
+.content_type{
+	background: aqua;	
+	min-height: 100px;
+	height: auto;/* 자동증가 */
+	padding: 5px;
+	border:  1px 1px 1px black;
+}
+.name_type{
+	background: #ffff80;	
+	min-height: auto;
+	height: auto;/* 자동증가 */
+	padding: 5px;
+	border:  1px 1px 1px black;
+}
+.regdate_type{
+	background: #ff80ff;	
+	min-height: auto;
+	height: auto;/* 자동증가 */
+	padding: 5px;
+/* 	border:  1px 1px 1px black;
+ */}
+ 
+span{
+	display: inline-block;
+	width: 80px;
+	text-align: right;
+}
