@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- html5에서는<style></style> -->
+<style type="text/css">
+/* id selector 표현방법 : element(tag) #id */
+p#p1 {
+	color: red;
+}
+
+p#p2 {
+	color: blue;
+}
+
+p#p3 {
+	color: pink;
+}
+
+div {
+	border: 1px solid green;
+}
+
+div#p1 {
+	width: 100px;
+	height: 100px;
+	border: 1px solid red;
+}
+/* class="box_style의 표현방법"
+		<div class="box_style>의 표현방법"	   
+	   element.style명-> div.box_style
+	    */
+div.box_style {
+	width: 50px;
+	height: 50px;
+	float: left;
+	margin: 10px;
+}
+</style>
+
+</head>
+<body>
+
+	<p id="p1">가나다라...</p>
+	<p id="p2">ABCDE...</p>
+	<p id="p3">1234...</p>
+	<div id="p1"></div>
+
+	<!-- class : 공통 style지정 -->
+	<div class="box_style"></div>
+	<div class="box_style"></div>
+	<div class="box_style"></div>
+
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+#disp {
+	width: 300px;
+	height: 300px;
+	border: 2px solid black;
+	background: black;
+	mar /* margin-left: 50px; */
+	/* margin-top: 50px; */
+}
+</style>
+<script type="text/javascript">
+	//                    함수인수(자)는 앞에 var붙이지 않는다(변수명만 기록)
+	function change_color(color) {
+
+		//alert(color);
+		var bg_color = 'black';
+		if (color == 'R') {
+			bg_color = '#ff0000'; // or 'red'
+		} else if (color == 'G') {
+			bg_color = 'green'; // or '#00ff00'
+		} else if (color == 'B') {
+			bg_color = 'blue';
+		}
+
+		//Id를 이용해서 컨트롤정보 얻어오기
+		var disp_ctrl = document.getElementById("disp");
+		//컨트롤명.style.속성명 = 값
+		disp_ctrl.style.background = bg_color;
+	}
+
+	var margin_left = 0;
+	var margin_top = 0;
+	//오른쪽이동
+	function move_right() {
+		var disp_ctrl = document.getElementById("disp");
+		//                       margin-left => marginLeft
+		//                          css         javascript  
+		//var margin_left = disp_ctrl.style.marginLeft;
+		//alert("[" + disp_ctrl.style.marginLeft + "]");
+		margin_left += 50;
+		disp_ctrl.style.marginLeft = margin_left + 'px';
+
+	}
+
+	function move_left() {
+		var disp_ctrl = document.getElementById("disp");
+		margin_left -= 50;
+		disp_ctrl.style.marginLeft = margin_left + 'px';
+	}
+
+	var margin_up = 0;
+	function move_down() {
+		var disp_ctrl = document.getElementById("disp");
+		margin_up += 50;
+		disp_ctrl.style.marginTop = margin_up + 'px';
+	}
+	function move_up() {
+		var disp_ctrl = document.getElementById("disp");
+		margin_up -= 50;
+		disp_ctrl.style.marginTop = margin_up + 'px';
+	}
+
+	var timer = null;
+	function move_auto_left_right() {
+
+		//Toggle처리(한번누루면 이동/다시누르면 정지)
+		var bt_move_ctrl = document.getElementById("bt_move");
+
+		if (timer == null) {//타이머가 가동중이 아니면
+			timer = setInterval("move_left_right();", 1);
+			bt_move_ctrl.value = "좌우로이동(자동:중지)";
+		} else {//타이머가 가동중이면
+			clearInterval(timer);
+			timer = null;
+			bt_move_ctrl.value = "좌우로이동(자동:이동)";
+		}
+	}
+
+	//이동방향
+	var bRight = true;
+
+	function move_left_right() {
+
+		var body_w = window.innerWidth;//화면폭(body폭)
+		var disp_ctrl = document.getElementById("disp");
+
+		if (bRight) {
+			margin_left += 2;
+		} else {
+			margin_left -= 2;
+		}
+
+		//오른쪽벽에 닿았냐?
+		if ((margin_left + 300) > body_w) {
+			margin_left = body_w - 300;
+			bRight = false;//왼쪽
+		} else if (margin_left < 0) {//왼쪽벽에 닿았냐?
+			margin_left = 0;
+			bRight = true;//오른쪽
+		}
+
+		//이동
+		disp_ctrl.style.marginLeft = margin_left + 'px';
+
+	}
+	var margin_center = 0;
+	function move_reset() {
+		var disp_ctrl = document.getElementById("disp");
+		margin_center == 0;
+		disp_ctrl.style.margin = margin_center + 'px';
+	}
+
+	function move_center(){
+		var body_w    = window.innerWidth; //화면폭(body폭)
+		var body_h    = window.innerHeight;//화면높이(body높이)
+		var disp_ctrl = document.getElementById("disp");
+		
+		margin_left = (body_w/2) - 150;
+		margin_top  = (body_h/2) - (300/2);
+		
+	    console.log('top:'+ margin_top + ' left:' + margin_left);
+		
+		disp_ctrl.style.marginTop  =  margin_top + 'px';
+		disp_ctrl.style.marginLeft =  margin_left + 'px';
+		
+	}
+</script>
+
+</head>
+<body>
+
+	<hr>
+	<input type="button" value="빨강" onclick="change_color('R');">
+	<input type="button" value="초록" onclick="change_color('G');">
+	<input type="button" value="파랑" onclick="change_color('B');">
+
+	<input type="button" value="왼쪽이동" onclick="move_left();">
+	<input type="button" value="오른쪽이동" onclick="move_right();">
+
+	<input type="button" value="위로이동" onclick="move_up();">
+	<input type="button" value="아래로이동" onclick="move_down();">
+
+	<input type="button" id="bt_move" value="좌우로이동(자동:이동)"
+		onclick="move_auto_left_right();">
+	<input type="button" value="초기화" onclick="move_reset();">
+	<input type="button" value="가운데이동" onclick="move_center();">
+
+
+	<hr>
+
+	<div id="disp"></div>
+
+
+
+</body>
+</html>

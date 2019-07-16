@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+th {
+	background-color: black;
+	color: white;
+}
+tr {
+	background-color: #000080;
+	color: red;
+}
+input {
+	background-color: aqua;
+	color: black;
+}
+button {
+	background: black;
+	color: white;
+}
+select {
+	background-color: blue;
+	color: red;
+}
+textarea {
+	background: blue;
+	color: red;
+	font-size: 20pt;
+	font-weight: 15;
+	
+}

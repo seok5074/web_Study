@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+th {
+	background-color:black;
+	color: white; 
+}
+
+td {
+	background-color:#000000;
+	color: #008080;
+	text-align: center;
+	font-size: 15pt;
+}

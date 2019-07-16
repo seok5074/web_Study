@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+var p_array = [  
+	             {"name":"일길동","age":21,"addr":"서울시 관악구 신림동"},
+	             {"name":"이길동","age":22,"addr":"서울시 관악구 조원동"},
+	             {"name":"삼길동","age":23,"addr":"서울시 관악구 독산동"}
+              ];
+
+function show_person_list(){
+	//p_array이용해서 테이블 작성
+	var str = "<table border=1 width=400>";
+	
+	str = str + "<tr><th>이름</th><th>나이</th><th>주소</th></tr>";
+	//for ...처리
+	for(var i=0;i<p_array.length;i++){
+		
+		str = str + "<tr><td>"+ p_array[i].name + "</td><td>" + 
+		                        p_array[i].age + "</td><td>" +
+		                        p_array[i].addr + "</td></tr>";
+	}
+	
+	
+	str += "</table>";
+	
+	//disp에 넣기
+	document.getElementById("disp").innerHTML = str;
+		
+}
+
+
+</script>
+
+</head>
+<body>
+<input type="button"  value="개인목록 보여줘" onclick="show_person_list();">
+<hr>
+<div id="disp"></div>
+
+</body>
+</html>

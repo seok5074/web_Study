@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>색집어넣기</title>
+
+<style type="text/css">
+#disp {
+	width: 300px;
+	height: 300px;
+	border: 2px solid black;
+	background: black;
+	/* 	margin-left: 50px;*/
+	/* margin-top: 50px; */
+}
+</style>
+<script type="text/javascript">
+	//					함수의인수(인자) 앞에 var붙이지않는다(변수명만기록)
+	function change_color(color) {
+		var bg_color = 'black';
+		if (color == 'R') {
+			bg_color = "red";//#ff0000
+		} else if (color == 'G') {
+			bg_color = "green";// #00ff00
+		} else if (color == 'B') {
+			bg_color = "blue";
+		}
+		//id를 이용해서 컨트롤정보 얻어오기
+		var disp_ctrl = document.getElementById("disp");
+		//컨트롤명.style.속성명 =값;
+		disp_ctrl.style.background = bg_color;
+	}
+
+	var margin_left = 0;
+
+	//오른쪽이동
+	function move_right() {
+
+		var disp_ctrl = document.getElementById("disp");
+		//                       margin-left => marginLeft
+		//var margin_left = disp_ctrl.style.marginLeft;
+		//alert("[" + margin_left + "]");
+
+		margin_left += 50;
+
+		disp_ctrl.style.marginLeft = margin_left + 'px';
+
+	}
+	function move_left() {
+		var disp_ctrl = document.getElementById("disp");
+		margin_left -= 50;
+		disp_ctrl.style.marginLeft = margin_left + 'px';
+	}
+	var margin_up = 0;
+	function move_down() {
+		var disp_ctrl = document.getElementById("disp");
+		margin_up += 50;
+		disp_ctrl.style.marginTop = margin_up + 'px';
+	}
+	function move_up() {
+		var disp_ctrl = document.getElementById("disp");
+		margin_up -= 50;
+		disp_ctrl.style.marginTop = margin_up + 'px';
+	}
+	var timer = null;
+	function move_auto_left_right() {
+
+		//Toggle처리(한번누루면 이동/다시누르면 정지)
+		var bt_move_ctrl = document.getElementById("bt_move");
+		if (timer == null) {//타이머가 가동중이 아니면
+			timer = setInterval("move_left_right();", 1000);
+			bt_move_ctrl.value = "좌우로이동(자동:중지)";
+		} else {//타이머가 가동중이면
+			clearInterval(timer);
+			timer = null;
+			bt_move_ctrl.value = "좌우로이동(자동:이동)";
+		}
+	}
+
+	function move_left_right() {
+		console.log("----");
+	}
+</script>
+</head>
+<body>
+
+	<hr>
+	<input type="button" value="빨강" onclick="change_color('R')">
+	<input type="button" value="초록" onclick="change_color('G')">
+	<input type="button" value="파랑" onclick="change_color('B')">
+
+	<input type="button" value="<-" onclick="move_left();">
+	<input type="button" value="->" onclick="move_right();">
+
+	<input type="button" value="up" onclick="move_up();">
+	<input type="button" value="down" onclick="move_down();">
+	<input type="button" id="bt_move" value="좌우로이동(자동:이동)"
+		onclick="move_auto_left_right();">
+	<hr>
+	<div id="disp"></div>
+
+</body>
+</html>

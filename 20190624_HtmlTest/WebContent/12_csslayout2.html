@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- css link -->
+<link rel="stylesheet" href="css/layout2.css">
+<link rel="stylesheet"
+	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="/resources/demos/style.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+	$(function() {
+		$("#accordion").accordion();
+	});
+</script>
+<style type="text/css">
+div {
+	font-size: 18pt;
+	color: red;
+}
+</style>
+
+</head>
+<body>
+	<div id="main_box">
+		<div id="header">1</div>
+		<div id="aside">
+			<!-- jQuery Menu  -->
+			<div id="accordion">
+				<h3>회사소개</h3>
+				<div>
+					<p>회사소개 세부메뉴</p>
+				</div>
+				<h3>연혁</h3>
+				<div>
+					<p>회사연혁 세부메뉴</p>
+				</div>
+				<h3>오시는길</h3>
+				<div>
+					<p>각 교통수별 메뉴</p>
+					<ul>
+						<li>버스</li>
+						<li>지하철</li>
+						<li>자가용</li>
+					</ul>
+				</div>
+			</div>
+			<!-- jQuery menu -->
+		</div>
+		<div id="content">공지사항</div>
+		<div id="con1">최근게시물</div>
+		<div id="con2">유용한 사이트</div>
+		<div id="con3">최근댓글</div>
+		<div id="footer">footer영역</div>
+	</div>
+</body>
+</html>

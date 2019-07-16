@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>계산기</title>
+<script type="text/javascript">
+	var dan = /^[0-9]{3,5}$/; //정규식 패턴을 맨위에 정규식 if문은 안에하나씩둬야한다.
+
+	function calc_plus() {
+		/* 		su1_ctrl.style.display='none';*/
+		/* 									    id */
+		var su1_ctrl = document.getElementById("su1"); /* 컨트롤정보 */
+		var su1 = su1_ctrl.value; /* 컨트롤값을 얻어온다. */
+		var su2 = document.getElementById("su2").value; //약축
+		if (dan.test(su1) == false) {
+			window.alert('3자리이상 5자리미만');
+			return;
+		}
+		if (dan.test(su2) == false) {
+			window.alert('3자리이상 5자리미만');
+			return;
+		}
+		//문자열 ->숫자변환
+		//방법1 -> parseInt("숫자형문자")
+		//var res = parseInt(su1)+paraseInt(su2);
+		//방법2 -> Number("숫자형문자") 포장한다
+		var res = Number(su1) + Number(su2);
+		//결과값 배정 id=res인 컨트롤에 넣어야한다.
+		document.getElementById("res").value = res;
+	}
+
+	function calc_minus() {
+		var su1 = document.getElementById("su1").value;
+		var su2 = document.getElementById("su2").value;
+
+		if (dan.test(su1) == false) {
+			window.alert('3자리이상 5자리미만');
+			return;
+		}
+		if (dan.test(su2) == false) {
+			window.alert('3자리이상 5자리미만');
+			return;
+		}
+
+		var res = Number(su1) - Number(su2);
+		document.getElementById("res").value = res;
+	}
+	function calc_gob() {
+		var su1 = document.getElementById("su1").value;
+		var su2 = document.getElementById("su2").value;
+		if (dan.test(su1) == false) {
+			window.alert('3자리이상 5자리미만');
+			return;
+		}
+		if (dan.test(su2) == false) {
+			window.alert('3자리이상 5자리미만');
+			return;
+		}
+		var res = Number(su1) * Number(su2);
+		document.getElementById("res").value = res;
+	}
+	function calc_nanu() {
+		var su1 = document.getElementById("su1").value;
+		var su2 = document.getElementById("su2").value;
+		if (dan.test(su1) == false) {
+			window.alert('3자리이상 5자리미만');
+			return;
+		}
+		if (dan.test(su2) == false) {
+			window.alert('3자리이상 5자리미만');
+			return;
+		}
+		var res = Number(su1) / Number(su2);
+		document.getElementById("res").value = res;
+	}
+	function calc_na() {
+		var su1 = document.getElementById("su1").value;
+		var su2 = document.getElementById("su2").value;
+		if (dan.test(su1) == false) {
+			window.alert('3자리이상 5자리미만');
+			return;
+		}
+		if (dan.test(su2) == false) {
+			window.alert('3자리이상 5자리미만');
+			return;
+		}
+		var res = Number(su1) % Number(su2);
+		document.getElementById("res").value = res;
+	}
+</script>
+</head>
+<body>
+	<!-- id 속성 :클라이언트에서 참조하기 위한 식별자
+	 name속성: 클라이언트 + 서버로 전송할  데이터의 식별자
+ -->
+
+	수1:
+	<input id="su1" name="su1" placeholder="3~5자리 숫자만 입력하세요">
+	<br> 수2:
+	<input id="su2">
+	<br>
+	<!-- 							버튼클릭이벤트			 -->
+	<input type="button" value="+" onclick="calc_plus();">
+	<input type="button" value="-" onclick="calc_minus();">
+	<input type="button" value="*" onclick="calc_gob();">
+	<input type="button" value="/" onclick="calc_nanu();">
+	<input type="button" value="%" onclick="calc_na();">
+
+	<br> 결과:
+	<input id="res">
+</body>
+</html>

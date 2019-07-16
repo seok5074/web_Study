@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+ul#main_menu {
+	list-style: none; /*  */
+	 margin-left: 20px; 
+}
+/* 하위요소 적용범위 지정 
+	상위 selector > 하위 selector : 자식에게만 적용
+	상위 selector   하위 selector : 후손(자식,손자 해당)에게만 적용*/
+/*  부모		      자식  */
+ul#main_menu>li {
+	display: inline-block;
+	margin-left: 20px;
+}
+
+ul#main_menu>li>a { /* ul#main_menu  li 이렇게도된다. */
+	border: 1px solid red;
+	display: inline-block; /* element요소성질 변경 */
+	width: 200px;
+	text-align: center;
+	text-decoration: none; /* a에서 및줄제거 */
+	color: #8888ff;
+}
+/* block 요소: 크기지정이 가능한 요소
+			    기본크기가 부모요소크기를 상속
+			    수직배치가된다.
+   inline요소 : 크기지정 불가
+   			  기본크기는 컨텐츠(내용)만큼 잡힌다   
+   			  기본적으로 수평배치가된다.*/
+   			  /* 해당element에 마우스가 올라가면 */
+ul#main_menu > li > a:hover {
+	color: red;
+	border: 1px solid blue;
+}
+</style>
+
+</head>
+<body>
+	<!-- hyper link: anchor tag 
+			 <a href=""></a>
+		-->
+	<ul id="main_menu">
+		<li><a href="1_font_tag.html">폰트관련Tag</a></li>
+		<li><a href="2_list_tag.html">리스트관련Tag</a></li>
+		<li><a href="3_table.html">테이블관련Tag</a></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var str ="<table border=1 wdith='500'>";
+	str +="<tr>";
+	
+	for (var dan = 2; dan <= 9; dan++) {
+		var title = "<th>" + dan + "단</th>";
+		str += title;
+	}
+	str + "</tr>";
+	for (var dan = 1; dan <= 9; dan++) {
+		str = str + "<tr>";
+		for (var i = 2; i <= 9; i++) {
+			str = str + ("<td>" + (i + "x" + dan + "=" + dan * i) + "</td>");
+		}
+		str = str + "</tr>"
+	}
+	str = str + "</tr>"
+	document.write(str);
+	document.write("</table>");
+</script>
+</head>
+<body>
+
+
+
+</body>
+</html>

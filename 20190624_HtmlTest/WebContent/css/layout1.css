@@ -1,0 +1,27 @@
+@charset "UTF-8";
+/* html내의 모든요소 */
+*{
+	margin: 0;
+}
+
+div#main_box {
+	width: 800px;
+	height: 600px;
+	background-color: #bcdcdb;
+	margin: auto; /* left right가 동일한크기로된다 */
+}
+
+div#header {
+	width: 100%;
+	height: 100px;
+	background-color: white;
+}
+div#content {
+	height: 400px;
+	background-color: #f4eb7b;
+}
+
+div#footer {
+	height: 100px;
+	background-color: white;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- javascript를 사용하기 위한설정 -->
+<script type="text/javascript">
+	/* 자바스크립트 언어는 스크립트사이에 써야한다. */
+	/* 제목변경 */
+	document.title = "제목변경한다..";
+	//body크기 구한다
+	//변수선언은 무조건 -> var 변수명
+	var width;
+	var height;
+
+	width = window.innerWidth;
+	height = window.innerHeight;
+	//출력창(console)에 출력
+	//javascript에서는 문자열표현형식 : "" or ''
+	console.log('width=' + width + "height=" + height);
+
+	window.onresize = function() {
+		width = window.innerWidth;
+		height = window.innerHeight;
+		console.log('width=' + width + "height=" + height);
+	};
+	//자료형
+	var a = '안녕' //string
+	a = 10; //number
+	a = new Date();//Date
+
+	var hour = a.getHours();//시간구하는 함수
+	var minute = a.getMinutes();//분
+	var second = a.getSeconds();//초
+
+	//html body 화면에 출력
+	document.write(hour + "시 " + minute + "분" + second + "초");
+
+	//함수선언
+	//function 함수명(인자)
+	function call_time() {
+		var today = new Date();//현재시스템날짜구하기
+		var h = today.getHours() + "";
+		var m = today.getMinutes() + "";
+		var s = today.getSeconds() + "";
+		//문자열 길이가 1이면 : h="3";
+		if (h.length == 1)
+			h = "0" + h;
+		if (m.length == 1)
+			m = "0" + m;
+		if (s.length == 1)
+			s = "0" + s;
+
+		var str = h + ":" + m + ":" + s;
+		//현재시간을 타이틀에출력
+		document.title = str;
+
+	}
+
+	//타이머			호출할 함수	  ,시간(1/1000)	
+	setInterval("call_time();", 1000);
+	//setInterval("call_time();",1000); // 1회성이다.
+
+	//연산자
+	var a = 10, b = 3;
+
+	var res = a + b;
+	document.write('<br>');//줄바꾸기
+	document.write(res + "<br>");
+
+	var res = a - b;
+	document.write(res + "<br>");
+
+	var res = a * b;
+	document.write(res + "<br>");
+
+	var res = (b == 0) ? 0 : a / b;
+	document.write(Math.floor(res) + "<br>");
+
+	var res = a % b;
+	document.write(res + "<br>");
+
+	//윤년구하기
+	var year = 2019;
+	//년도 입력받기
+	//year=window.prompt("년도을 입력하세요");
+	var result = "평년";
+	/*
+	if(year%400 ==0 ) result="윤년";
+	if(year%4==0 && year%100 !=0) result="윤년";
+	 */
+	if ((year % 400 == 0) || (year % 4 == 0 && year % 100 != 0))
+		result = "윤년";
+
+	document.write(year + "년도는 " + result + "<br>");
+
+	for (var i = 0; i < 10; i++) {
+		if (i % 2 == 0)
+			document.write("<font color=red>");
+		else
+			document.write("<font color=blue>");
+
+		document.write(i + " ");
+
+		document.write("</font>");
+	}
+
+	document.write("<br>");
+
+	var dan = prompt("단 입력 :");
+
+	//2~9사이값체크
+	//자바스크립트 정규식(regular)
+	//						문자          자리수
+	/* var dan_regular=/^[a-zA-z0-9]{1}$/; */
+	// ^:시작문자
+	// $:끝문자
+	// []:문자숫자범위
+	// {}:자릿수->{6,8} 6~8자리
+	var dan_regular = /^[2-9]{1}$/;
+	if (dan_regular.test(dan) == false) {
+		window.alert('2~9사이에값을 입력');
+	} else {
+
+		var str = "<table border=1>";
+		str = str + "<tr><th>" + dan + "단 보기</th></tr>";
+
+		for (var i = 1; i <= 9; i++) {
+			str = str + "<tr><td>" + (dan + "x" + i + "=" + dan * i)
+					+ "</td></tr>";
+		}
+
+		str += "</table>"; //str =str+"</table>"
+		document.write(str);
+	}
+	
+	
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	//배열 사용법 1
+	//			  0     1     2     3
+	var sido_array = [ "서울", "경기", "인천", "대전" ];
+	document.write("sido_array's lenth=" + sido_array.length + "<br>");
+
+	document.write("sido_array[0]:" + sido_array[0] + "<br>");
+
+	document.write("---sido_array[]---<br>");
+	for (var i = 0; i < sido_array.length; i++) {
+		document.write("sido_array[" + i + "]:" + sido_array[i] + "<br>");
+	}
+
+	//배열사용법2
+	var fruit_array = new Array();
+	fruit_array[0] = '사과';
+	fruit_array[1] = '배';
+	fruit_array[2] = '참외';
+	fruit_array[3] = '수박';
+	document.write("fruit_array's lenth=" + fruit_array.length + "<br>");
+	fruit_array[99] = '수박';//주의 
+	document.write("fruit_array's lenth=" + fruit_array.length + "<br>");
+
+	var my_array2 = [ //0   1   2   3   4
+	[ 1, 2, 3, 4, 5 ], //0 행첨자
+	[ 'A', 'B', 'C', 'D', 'E' ] //1
+	];
+	document.write(my_array2[1][0] + "<br>");
+
+	//json(javascript object notation):자바
+	// :자바스크립트에서 객체를  표현하는 방법
+	//				  속성명    	     값     , 속성명   값, 	 속성명  		 값
+	//	json객체표현=>{"name":"일길동","age":30, 	"tel":"010-111-1111"}
+	//				  key  : value, key :value,  key : value
+	/*
+	자바에서는 객체 표현
+	class person{
+		string name;
+		int age;
+		string tel;
+	}
+	person p = new person;
+	 */
+
+	var p = {//object
+		"name" : "일길동",
+		"age" : 30,
+		"tel" : "010-111-1111"
+	};
+
+	document.write("p.name=" + p.name + "<br>");
+	document.write("p.age=" + p.age + "<br>");
+	document.write("p.tel=" + p.tel + "<br>");
+
+	document.write("p['name']=" + p['name'] + "<br>");
+	document.write('p["age"]=' + p["age"] + "<br>");
+	var p1={"name" : {"first_name":"길동","last_name":"홍"},
+			"age"  :30,
+			"tel"  : {"office_tel":"02-123-3456","cell_tel":"010-111-1234"},
+			"hobby":['낚시','영화감상']		
+	};
+	document.write("이름만 :"+p1.name.first_name+"<br>");
+	document.write("휴대폰 :"+p1.tel.cell_tel+"<br>");
+	document.write("취미:  ");
+	for(var i=0;i<p1.hobby.length;i++){
+		document.write(p1.hobby[i]+" ");
+	}
+	document.write("<br>");
+
+	</script>
+</head>
+<body>
+
+
+</body>
+</html>
