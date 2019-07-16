@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+table{
+	width: 400px;
+}
+
+th{
+	width: 120px;
+}
+th,caption{
+	background-color: black;
+	color:white;
+	font-size: 16pt;
+	font-weight: bold;
+}
+
+td{
+	color: #0080c0;
+	padding-left: 10px;
+}
