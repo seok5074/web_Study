@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script type="text/javascript">
+	
+	function send(f){
+		
+		//입력값 체크
+		var su1 = f.su1.value;
+		var su2 = f.su2.value;
+		
+		//정규식이용해서 전송데이터 검증
+		if(su1==''){
+			alert('su1값을 정수만 입력하세요');
+			f.su1.value='';
+			f.su1.focus();
+			return;
+		}
+				
+		
+		//전송
+		f.submit();// f form이 소유한 변수(parameter)를 action에게 전송해라
+	}
+
+</script>
+
+</head>
+<body>
+
+<form action="calc2.do">
+수1:<input name="su1"><br>
+수2:<input name="su2"><br>
+                        <!-- this.form : this를 소유하고 있는 폼  -->
+<input type="button"  value="계산해줘" onclick="send(this.form);">
+</form>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form action="say_hello.do">
+
+		알고싶은 나라의 인사말을 선택<br>
+		<!-- <from action=""> 생략되면 자신을 호출-->
+
+		<input type="radio" name="nation" value="kor" checked="checked">한국어
+		<input type="radio" name="nation" value="eng">영어
+		<input type="radio" name="nation" value="jpn">일본어 
+		<input type="radio" name="nation" value="chn">중국어 
+		<input type="radio" name="nation" value="fra">프랑스어
+		<input type="radio" name="nation" value="deu">독일어 
+		<input type="radio" name="nation" value="etc">기타
+		<br>
+		<!-- form action에 지정된 객체를 호출 +form parameter 넘긴다. -->
+		<input type="submit" value="알려줘">
+	</form>
+</body>
+</html>
