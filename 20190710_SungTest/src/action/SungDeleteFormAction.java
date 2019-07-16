@@ -1,0 +1,42 @@
+package action;
+
+import java.io.IOException;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import dao.SungTBDao;
+import vo.SungVo;
+
+/**
+ * Servlet implementation class SungDeleteFormAction
+ */
+@WebServlet("/sung/delete_form.do")
+public class SungDeleteFormAction extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void service(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		//   /sung/modify_form.do?no=43
+		
+		//수정해야할 no를 받는다
+		int no = Integer.parseInt(request.getParameter("no"));
+		//수정할 1건의 성적데이터 얻어오기
+		int  vo = SungTBDao.getInstance().delete(no);
+		//request binding
+		request.setAttribute("vo", vo);
+		//forward
+		String forward_page = "sung_delete_form.jsp";
+		RequestDispatcher disp = request.getRequestDispatcher(forward_page);
+		disp.forward(request, response);
+
+	}
+
+}
